@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage ('checkout') {
+        stage ('cloning') {
             steps {
-                echo "This is checkout stage"
+                git branch: 'main', url: 'https://github.com/Garv173/java-onlinebookstore.git'
             }
         }
         stage ('build') {
