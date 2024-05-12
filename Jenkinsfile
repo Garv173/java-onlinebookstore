@@ -8,19 +8,9 @@ pipeline {
         }
         stage ('build') {
             steps {
-                echo "This is build stage"
+                sh 'mvn clean package'
             }
-        }
-        stage ('sonarscan') {
-            steps {
-                echo "This is sonarscan stage"
-            }
-        }               
-        stage ('push') {
-            steps {
-                echo "This is push stage"
-            }
-        }
+        }           
         stage ('deploy') {
             steps {
                 echo "This is deploy stage"
